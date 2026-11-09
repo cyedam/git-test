@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slow Scroll</title>
+
+  <!-- Pretendard 폰트 (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- [효과 3] 상단 스크롤 진행률 프로그래스 바 -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__bar" id="progressBar"></div>
+  </div>
+
+  <!-- 히어로 섹션 -->
+  <header class="hero">
+    <!-- [효과 2] 패럴랙스 배경: 스크롤보다 느리게 움직임 -->
+    <div
+      class="hero__bg"
+      id="heroBg"
+      role="img"
+      aria-label="안개 낀 산 풍경"
+      style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=80');"
+    ></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <!-- [효과 1] reveal 클래스: 아래에서 위로 페이드인 -->
+      <h1 class="hero__title reveal">천천히,<br />그리고 깊게</h1>
+      <p class="hero__text reveal">
+        빠르게 지나가는 하루 속에서 잠시 멈춰 봅니다.<br />
+        스크롤을 내리며 조용한 풍경을 만나 보세요.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- 섹션 1 -->
+    <section class="section">
+      <div class="section__inner">
+        <div class="section__text">
+          <h2 class="section__title reveal">숲의 호흡</h2>
+          <p class="section__desc reveal">
+            나무 사이로 스며드는 빛은 서두르지 않습니다.<br />
+            가장 느린 속도가 가장 오래 남습니다.
+          </p>
+        </div>
+        <figure class="section__media reveal">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80"
+            alt="햇살이 비치는 숲"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- 섹션 2 (이미지 좌측 배치) -->
+    <section class="section section--reverse">
+      <div class="section__inner">
+        <div class="section__text">
+          <h2 class="section__title reveal">물의 거울</h2>
+          <p class="section__desc reveal">
+            잔잔한 수면은 하늘을 그대로 담아냅니다.<br />
+            비워 낼수록 더 많은 것이 보입니다.
+          </p>
+        </div>
+        <figure class="section__media reveal">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
+            alt="산과 하늘이 비친 호수"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- 섹션 3 -->
+    <section class="section">
+      <div class="section__inner">
+        <div class="section__text">
+          <h2 class="section__title reveal">길 위에서</h2>
+          <p class="section__desc reveal">
+            목적지보다 중요한 건 걸어가는 순간입니다.<br />
+            오늘의 한 걸음이 내일의 풍경이 됩니다.
+          </p>
+        </div>
+        <figure class="section__media reveal">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+            alt="계곡 사이로 펼쳐진 풍경"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
