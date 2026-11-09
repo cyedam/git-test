@@ -1,100 +1,13 @@
-/* =====================================================================
-   Material Design 3 기반 디자인 시스템
-   - Color: 자연 테마에 맞춘 그린 시드 컬러의 M3 컬러 롤 (라이트/다크)
-   - Typography: M3 타입 스케일 (Display / Headline / Title / Body / Label)
-   - Shape: M3 코너 토큰 (extra-small ~ full)
-   - Elevation, State layer, Motion: M3 토큰
-   ===================================================================== */
-
-/* ===== 디자인 토큰 ===== */
-:root {
-  /* --- Color roles (Light) --- */
-  --md-sys-color-primary: #386a20;
-  --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-primary-container: #b7f397;
-  --md-sys-color-on-primary-container: #072100;
-  --md-sys-color-secondary: #55624c;
-  --md-sys-color-on-secondary: #ffffff;
-  --md-sys-color-secondary-container: #d9e7cb;
-  --md-sys-color-on-secondary-container: #131f0d;
-  --md-sys-color-tertiary: #386667;
-  --md-sys-color-tertiary-container: #bbebec;
-  --md-sys-color-on-tertiary-container: #002020;
-  --md-sys-color-surface: #f8faf0;
-  --md-sys-color-on-surface: #1a1c18;
-  --md-sys-color-on-surface-variant: #43483e;
-  --md-sys-color-surface-container-lowest: #ffffff;
-  --md-sys-color-surface-container-low: #f2f5ea;
-  --md-sys-color-surface-container: #ecefe4;
-  --md-sys-color-surface-container-high: #e6e9df;
-  --md-sys-color-surface-container-highest: #e1e4d9;
-  --md-sys-color-outline: #74796d;
-  --md-sys-color-outline-variant: #c4c8bb;
-  --md-sys-color-scrim: #000000;
-  --md-sys-color-shadow: #000000;
-
-  /* --- Typography --- */
-  --md-ref-typeface-brand: "Roboto", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --md-ref-typeface-plain: "Roboto", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-
-  /* --- Shape --- */
-  --md-sys-shape-corner-extra-small: 4px;
-  --md-sys-shape-corner-small: 8px;
-  --md-sys-shape-corner-medium: 12px;
-  --md-sys-shape-corner-large: 16px;
-  --md-sys-shape-corner-extra-large: 28px;
-  --md-sys-shape-corner-full: 9999px;
-
-  /* --- Elevation --- */
-  --md-sys-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-2: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-3: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
-
-  /* --- State layer opacity --- */
-  --md-sys-state-hover: 0.08;
-  --md-sys-state-focus: 0.1;
-  --md-sys-state-pressed: 0.1;
-
-  /* --- Motion --- */
-  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
-  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
-  --md-sys-motion-duration-short4: 200ms;
-  --md-sys-motion-duration-medium2: 300ms;
-  --md-sys-motion-duration-extra-long2: 900ms;
-
-  /* --- Layout --- */
-  --max-width: 1240px;
-  --gutter: clamp(16px, 4vw, 24px);
-}
-
-/* --- Color roles (Dark) --- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --md-sys-color-primary: #9cd67d;
-    --md-sys-color-on-primary: #0c3900;
-    --md-sys-color-primary-container: #20510a;
-    --md-sys-color-on-primary-container: #b7f397;
-    --md-sys-color-secondary: #bdcbb0;
-    --md-sys-color-on-secondary: #283420;
-    --md-sys-color-secondary-container: #3e4a35;
-    --md-sys-color-on-secondary-container: #d9e7cb;
-    --md-sys-color-tertiary: #a0cfd0;
-    --md-sys-color-tertiary-container: #1e4e4f;
-    --md-sys-color-on-tertiary-container: #bbebec;
-    --md-sys-color-surface: #11140e;
-    --md-sys-color-on-surface: #e1e4d9;
-    --md-sys-color-on-surface-variant: #c4c8bb;
-    --md-sys-color-surface-container-lowest: #0c0f09;
-    --md-sys-color-surface-container-low: #1a1c18;
-    --md-sys-color-surface-container: #1e201b;
-    --md-sys-color-surface-container-high: #282b25;
-    --md-sys-color-surface-container-highest: #33362f;
-    --md-sys-color-outline: #8e9286;
-    --md-sys-color-outline-variant: #43483e;
-  }
-}
-
 /* ===== 기본 설정 ===== */
+:root {
+  --bg: #fafaf8;
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #1a1a1a;
+  --max-width: 1120px;
+  --gutter: clamp(20px, 5vw, 48px);
+}
+
 *,
 *::before,
 *::after {
@@ -105,17 +18,13 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light dark;
 }
 
 body {
-  font-family: var(--md-ref-typeface-plain);
-  background: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
-  /* Body Large */
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.03125rem;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
   word-break: keep-all; /* 한글 단어 단위 줄바꿈 */
   -webkit-font-smoothing: antialiased;
 }
@@ -125,59 +34,21 @@ img {
   max-width: 100%;
 }
 
-/* ===== M3 타입 스케일 ===== */
-.md-typescale-display-large {
-  font-family: var(--md-ref-typeface-brand);
-  font-size: clamp(2.75rem, 8vw, 3.5625rem); /* 57px */
-  line-height: 1.12;
-  font-weight: 400;
-  letter-spacing: -0.015625rem;
-}
-
-.md-typescale-headline-large {
-  font-family: var(--md-ref-typeface-brand);
-  font-size: clamp(1.75rem, 4vw, 2rem); /* 32px */
-  line-height: 1.25;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-.md-typescale-title-large {
-  font-family: var(--md-ref-typeface-brand);
-  font-size: 1.375rem; /* 22px */
-  line-height: 1.75rem;
-  font-weight: 400;
-}
-
-.md-typescale-body-large {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.03125rem;
-  font-weight: 400;
-}
-
-.md-typescale-label-large {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  letter-spacing: 0.00625rem;
-  font-weight: 500;
-}
-
-/* ===== [효과 3] M3 Linear progress indicator ===== */
+/* ===== [효과 3] 스크롤 진행률 프로그래스 바 ===== */
 .progress {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   z-index: 100;
-  background: var(--md-sys-color-secondary-container);
+  background: transparent;
 }
 
 .progress__bar {
   width: 100%;
   height: 100%;
-  background: var(--md-sys-color-primary);
+  background: var(--accent);
   transform: scaleX(0); /* JS에서 0~1 사이로 변경 */
   transform-origin: left center;
 }
@@ -192,9 +63,8 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
-  background: var(--md-sys-color-surface-container-highest);
 }
 
 /* [효과 2] 패럴랙스 배경: 위아래로 여유를 두어 이동해도 빈 공간이 보이지 않게 함 */
@@ -206,109 +76,43 @@ img {
   will-change: transform;
 }
 
-/* M3 scrim */
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45));
 }
 
 .hero__content {
   position: relative;
-  max-width: 720px;
   padding: 0 var(--gutter);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .hero__title {
-  margin-bottom: 24px;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
 }
 
 .hero__text {
-  opacity: 0.92;
-  margin-bottom: 40px;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 300;
+  opacity: 0.9;
 }
 
-/* ===== M3 Button (filled) ===== */
-.md-button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 24px 0 16px;
-  border-radius: var(--md-sys-shape-corner-full);
-  border: 0;
-  font-family: var(--md-ref-typeface-plain);
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  transition: box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
-}
-
-.md-button--filled {
-  background: var(--md-sys-color-primary-container);
-  color: var(--md-sys-color-on-primary-container);
-}
-
-.md-button__icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-
-/* State layer */
-.md-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: currentColor;
-  opacity: 0;
-  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
-}
-
-.md-button:hover {
-  box-shadow: var(--md-sys-elevation-1);
-}
-
-.md-button:hover::before {
-  opacity: var(--md-sys-state-hover);
-}
-
-.md-button:focus-visible::before,
-.md-button:active::before {
-  opacity: var(--md-sys-state-pressed);
-}
-
-/* M3 focus indicator */
-.md-button:focus-visible {
-  outline: 3px solid var(--md-sys-color-secondary);
-  outline-offset: 2px;
-}
-
-/* ===== 콘텐츠 섹션 (M3 Filled card) ===== */
-main {
-  padding: clamp(48px, 10vw, 96px) var(--gutter);
-  display: grid;
-  gap: clamp(24px, 4vw, 40px);
-}
-
+/* ===== 콘텐츠 섹션 ===== */
 .section {
-  max-width: var(--max-width);
-  width: 100%;
-  margin: 0 auto;
-  padding: clamp(24px, 5vw, 56px);
-  border-radius: var(--md-sys-shape-corner-extra-large);
-  background: var(--md-sys-color-surface-container-low);
+  padding: clamp(100px, 18vw, 200px) var(--gutter);
 }
 
 .section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   align-items: center;
-  gap: clamp(32px, 6vw, 80px);
+  gap: clamp(40px, 8vw, 120px);
 }
 
 /* 섹션 2: 이미지를 왼쪽으로 */
@@ -316,32 +120,24 @@ main {
   order: 2;
 }
 
-/* M3 Assist chip 스타일 라벨 */
-.section__chip {
-  display: inline-flex;
-  align-items: center;
-  height: 32px;
-  padding: 0 16px;
-  margin-bottom: 20px;
-  border-radius: var(--md-sys-shape-corner-small);
-  background: var(--md-sys-color-secondary-container);
-  color: var(--md-sys-color-on-secondary-container);
-}
-
 .section__title {
-  color: var(--md-sys-color-on-surface);
-  margin-bottom: 16px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
 }
 
 .section__desc {
-  color: var(--md-sys-color-on-surface-variant);
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  color: var(--muted);
 }
 
 .section__media {
   overflow: hidden;
-  border-radius: var(--md-sys-shape-corner-large);
+  border-radius: 4px;
   aspect-ratio: 4 / 5;
-  background: var(--md-sys-color-surface-container-highest);
+  background: #eaeae6;
 }
 
 .section__media img {
@@ -350,23 +146,25 @@ main {
   object-fit: cover;
 }
 
-/* ===== [효과 1] 아래에서 위로 페이드인 (M3 emphasized decelerate) ===== */
+/* ===== [효과 1] 아래에서 위로 페이드인 ===== */
+/* 처음엔 투명 + 40px 아래에 위치 */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(40px);
   transition:
-    opacity var(--md-sys-motion-duration-extra-long2) var(--md-sys-motion-easing-emphasized-decelerate),
-    transform var(--md-sys-motion-duration-extra-long2) var(--md-sys-motion-easing-emphasized-decelerate);
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--delay, 0s); /* JS에서 순차 딜레이 지정 */
 }
 
+/* 화면에 들어오면 JS가 is-visible 클래스를 붙여 제자리로 */
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ===== 반응형 (M3 Compact window class: < 840px) ===== */
-@media (max-width: 839px) {
+/* ===== 반응형 (모바일) ===== */
+@media (max-width: 768px) {
   .section__inner {
     grid-template-columns: 1fr;
   }
